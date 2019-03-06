@@ -1,0 +1,9 @@
+node_modules
+
+src/documents/json-files/track1/*
+src/documents/json-files/track2/*
+src/documents/json-files/track3/*
+
+src/documents/Track 1/
+src/documents/Track 2/
+src/documents/Track 3/
