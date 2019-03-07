@@ -6,7 +6,6 @@ import gql from 'graphql-tag'
 const apollo = createProvider().defaultClient
 
 glob("./src/documents/json-files/track1/*.json", {}, async(err, files)=>{
-  
   const {data: {login: {token}}} = await apollo.mutate({
     mutation: gql`
     mutation login($cred: Credentials!){
@@ -18,8 +17,8 @@ glob("./src/documents/json-files/track1/*.json", {}, async(err, files)=>{
     `, variables: {
       cred: {
         tenantId: 1006,
-        username: "naativ.test.interviewer@mailinator.com",
-        password: "Password1"
+        username: process.env.USERNAME || "naativ.test.interviewer@mailinator.com",
+        password: process.env.PASSWORD || "Password1"
       }
     }
   })

@@ -18,8 +18,8 @@ glob("./src/documents/json-files/track2/*.json", {}, async(err, files)=>{
     `, variables: {
       cred: {
         tenantId: 1006,
-        username: "naativ.test.interviewer@mailinator.com",
-        password: "Password1"
+        username: process.env.USERNAME || "naativ.test.interviewer@mailinator.com",
+        password: process.env.PASSWORD || "Password1"
       }
     }
   })
